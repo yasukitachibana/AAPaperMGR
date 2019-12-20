@@ -15,7 +15,7 @@ def Main(argc,argvs):
 
         run_total = 5
         for run in range(0,run_total):
-            code_path = '/Users/yasukitachibana/Dropbox/Codes/JETSCAPE-COMP'
+            code_path = '/wsu/home/go/go54/go5410/FirstTestAAPaper'
             ftest.Submit(argc,argvs,code_path,this_bin,run)
     
 

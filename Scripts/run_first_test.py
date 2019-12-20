@@ -57,7 +57,7 @@ def Submit(argc,argvs,code_path,this_bin,run):
     qsub_command = qcom.GenerateQsubCommand(gf.GetJobName(this_bin,run),master_command)
 
     print(master_command)
-    os.system(master_command)
+    #os.system(master_command)
     exit()
     
     print(qsub_command)
