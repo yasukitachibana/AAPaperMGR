@@ -24,7 +24,7 @@ def CheckArg(argc,argvs):
 
     if argc < 3:
         print('please input options')
-        print('python run_jetscape_master.py [eCM] [PP/AA] [alphaS] [Qs]')
+        print('python run_jetscape_master.py [eCM] [PP/AA] [centrality, 0-10, 30-40, 30-40, 40-50] [alphaS] [Qs] [take_recoil 0 or 1]')
         exit()
     elif argvs[2] != 'PP' and  argc < 7:
         print('please input options')
