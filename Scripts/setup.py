@@ -63,6 +63,8 @@ def SetXmlAA(argc, argvs, copy):
     T0 = 0.16 #Note! This becomes Tc in LBT
     Tc = 0.15
 
+    copy = sxml.SetXmlParam( 'IS',copy,'initial_profile_path', hydro_files_folder )
+    copy = sxml.SetXmlParam( 'hydro_from_file',copy,'hydro_files_folder', hydro_files_folder )
 
     copy = sxml.SetXmlParam( 'Matter',copy,'Q0', Qs )
     copy = sxml.SetXmlParam( 'Matter',copy,'T0', T0 )
@@ -77,9 +79,7 @@ def SetXmlAA(argc, argvs, copy):
     copy = sxml.SetXmlParam( 'Lbt',copy,'hydro_Tc', 0.16 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'qhat0', -3.0 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'alphas', alphas )
-    
-    copy = sxml.SetXmlParam( 'hydro_from_file',copy,'hydro_files_folder', hydro_files_folder )
-    
+        
     copy = sxml.SetXmlParam( 'JetHadronization',copy,'take_recoil', take_recoil )
     
     return copy
