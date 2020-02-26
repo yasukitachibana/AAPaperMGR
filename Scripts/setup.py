@@ -54,12 +54,13 @@ def SetXmlPP(copy):
 
 def SetXmlAA(argc, argvs, copy):
 
-    alphas = argvs[3]
-    Qs = argvs[4]
-    take_recoil = argvs[5]
+    hydro_files_folder = '/wsu/tmp/HydroProfiles/5TeV_'+argvs[3]
+    alphas = argvs[4]
+    Qs = argvs[5]
+    take_recoil = argvs[6]
     T0 = 0.16 #Note! This becomes Tc in LBT
     Tc = 0.15
-    hydro_files_folder = ''
+
 
     copy = sxml.SetXmlParam( 'Matter',copy,'Q0', Qs )
     copy = sxml.SetXmlParam( 'Matter',copy,'T0', T0 )
