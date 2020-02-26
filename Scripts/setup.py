@@ -126,12 +126,12 @@ def Submit(argc,argvs,code_path,this_bin,run):
     print('Submission, Main Command')
     print(master_command)
     print('-')
-    #os.system(master_command)
+    os.system(master_command)
     
-    print('Submission, Qsub Command')
-    print(qsub_command)
-    print('-')
-    os.system(qsub_command)
+    #print('Submission, Qsub Command')
+    #print(qsub_command)
+    #print('-')
+    #os.system(qsub_command)
     #exit()
 
 
