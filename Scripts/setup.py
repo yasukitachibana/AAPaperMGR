@@ -12,6 +12,8 @@ def GetXml(argc, argvs, master_xml, xml_filename, this_bin, eCM):
     master = open(master_xml).read()
     copy = master
     
+    copy = sxml.SetXmlParam( 'Random',copy,'seed', 0 )
+    
     copy = sxml.SetXmlParam( 'PythiaGun',copy,'FSR_on', 0 )
     copy = sxml.SetXmlParam( 'PythiaGun',copy,'pTHatMin', this_bin[0] )
     copy = sxml.SetXmlParam( 'PythiaGun',copy,'pTHatMax', this_bin[1] )
