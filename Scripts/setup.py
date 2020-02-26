@@ -123,16 +123,17 @@ def Submit(argc,argvs,code_path,this_bin,run):
     
     qsub_command = qcom.GenerateQsubCommand(gf.GetJobName(this_bin,run),master_command)
     
-    print('Submission, Main Command')
-    print(master_command)
-    print('-')
-    os.system(master_command)
-    
-    #print('Submission, Qsub Command')
-    #print(qsub_command)
+    #print('Submission, Main Command')
+    #print(master_command)
     #print('-')
-    #os.system(qsub_command)
+    #os.system(master_command)
     #exit()
+    
+    print('Submission, Qsub Command')
+    print(qsub_command)
+    print('-')
+    os.system(qsub_command)
+
 
 
 
