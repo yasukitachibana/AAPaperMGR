@@ -1,6 +1,13 @@
 ## get_filenames.py
 
 
+def GetOutdirname(argc,argvs):
+    outname = ''
+    for i in range(1,argc-1):
+        outname += argvs[i] + '_'
+    outname += argvs[argc-1]
+    return outname
+
 def GetSigmaFilename(this_bin,run):
     return 'SigmaHardBin'+str(this_bin[0])+'_'+str(this_bin[1])+'_Run'+str(run)+'.out'
 

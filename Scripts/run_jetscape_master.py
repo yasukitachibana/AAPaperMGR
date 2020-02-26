@@ -15,19 +15,20 @@ def Main(argc,argvs):
 
         run_total = 5
         for run in range(0,run_total):
-            code_path = '/wsu/home/go/go54/go5410/FirstTestAAPaper'
+            code_path = '/wsu/home/go/go54/go5410/JETSCAPE-COMP'
             setup.Submit(argc,argvs,code_path,this_bin,run)
     
 
 
 def CheckArg(argc,argvs):
+
     if argc < 3:
         print('please input options')
         print('python run_jetscape_master.py [eCM] [PP/AA] [alphaS] [Qs]')
         exit()
-    elif argvs[2] != 'PP' and  argc < 5:
+    elif argvs[2] != 'PP' and  argc < 6:
         print('please input options')
-        print('python run_jetscape_master.py [eCM] [PP/AA] [alphaS] [Qs]')
+        print('python run_jetscape_master.py [eCM] [PP/AA] [alphaS] [Qs] [take_recoil 0 or 1]')
         exit()
 
     print( '###############')
@@ -37,6 +38,8 @@ def CheckArg(argc,argvs):
     if argvs[2] != 'PP':
         print( 'alphaS: '+argvs[3] )
         print( 'Qs: '+argvs[4] )
+        no_yes = ['No','Yes']
+        print( 'take recoil: '+no_yes[int(argvs[5])] )
     print( '###############')
     print( '###############')
         
