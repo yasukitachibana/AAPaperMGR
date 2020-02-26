@@ -56,7 +56,7 @@ def SetXmlPP(copy):
 
 def SetXmlAA(argc, argvs, copy):
 
-    hydro_files_folder = '/wsu/tmp/HydroProfiles/5TeV_'+argvs[3]
+    hydro_files_folder = '/wsu/home/go/go54/go5410/maj-shen/JETSCAPEDataFile/HydroProfiles/5TeV_'+argvs[3]
     alphas = argvs[4]
     Qs = argvs[5]
     take_recoil = argvs[6]
