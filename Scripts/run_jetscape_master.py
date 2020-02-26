@@ -2,7 +2,7 @@
 
 import sys
 import get_pthat_bins as gpt
-import run_first_test as ftest
+import setup as setup
 
 
 def Main(argc,argvs):
@@ -16,22 +16,29 @@ def Main(argc,argvs):
         run_total = 5
         for run in range(0,run_total):
             code_path = '/wsu/home/go/go54/go5410/FirstTestAAPaper'
-            ftest.Submit(argc,argvs,code_path,this_bin,run)
+            setup.Submit(argc,argvs,code_path,this_bin,run)
     
 
 
 def CheckArg(argc,argvs):
-    if argc < 2:
+    if argc < 3:
         print('please input options')
-        print('python run_jetscape_master.py [eCM] [PP/AA]')
+        print('python run_jetscape_master.py [eCM] [PP/AA] [alphaS] [Qs]')
         exit()
-    else:
-        
-        print( 'system: '+argvs[2] )
-        if int(argvs[1]) != 5020 or argvs[2] != 'PP':
-            exit()
+    elif argvs[2] != 'PP' and  argc < 5:
+        print('please input options')
+        print('python run_jetscape_master.py [eCM] [PP/AA] [alphaS] [Qs]')
+        exit()
 
-
+    print( '###############')
+    print( '###############')
+    print( 'eCM: '+argvs[1] )
+    print( 'system: '+argvs[2] )
+    if argvs[2] != 'PP':
+        print( 'alphaS: '+argvs[3] )
+        print( 'Qs: '+argvs[4] )
+    print( '###############')
+    print( '###############')
         
 if __name__ == '__main__':
     argvs = sys.argv
