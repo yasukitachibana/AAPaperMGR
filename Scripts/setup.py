@@ -90,11 +90,12 @@ def Submit(argc,argvs,code_path,this_bin,run):
     PPAA = argvs[2]
     
     outdir = os.path.join('/wsu/tmp/AAPaper',gf.GetOutdirname(argc,argvs))
-    print(outdir)
-    outdir = '../Test'
+    mdir.Mkdirs(outdir)
+    #print(outdir)
+    #outdir = '../Test'
     master_xml = os.path.join(code_path,'examples/jetscape_init.xml')
-    master_xml = '../XmlMaster/master.xml'
-    print(master_xml)
+    #master_xml = '../XmlMaster/master.xml'
+    #print(master_xml)
 
     exec_name = 'PythiaBrickTest'
     if PPAA != 'PP':
