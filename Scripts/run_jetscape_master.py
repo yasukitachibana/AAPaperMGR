@@ -12,12 +12,12 @@ def Main(argc,argvs):
     for this_bin in pthat_bins:
         print('pthat_bin: ', end='')
         print(this_bin, end=' (GeV)\n')
-
+        #if this_bin[0] >= 2:
         run_total = 5
         for run in range(0,run_total):
             code_path = '/wsu/home/go/go54/go5410/JETSCAPE-COMP'
             setup.Submit(argc,argvs,code_path,this_bin,run)
-    
+
 
 
 def CheckArg(argc,argvs):
