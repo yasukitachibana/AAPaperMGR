@@ -45,6 +45,9 @@ def Check(argc,argvs,code_path,this_bin,run):
         if os.path.isdir(build_dir):
             if not mdir.IsEmpty(build_dir):
                 shutil.rmtree(build_dir)
+        print('Incompleted. To be submitted again.')
+    else:
+        print('Good. To be Skipped.')
     
     return resub
 
