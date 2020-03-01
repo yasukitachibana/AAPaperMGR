@@ -4,6 +4,7 @@ import set_xml as sxml
 import get_command as gcom
 import manage_dir as mdir
 import generate_qsub_command as qcom
+import set_path as spath
 
 
 def GetXml(argc, argvs, master_xml, xml_filename, this_bin, eCM):
@@ -56,7 +57,7 @@ def SetXmlPP(copy):
 
 def SetXmlAA(argc, argvs, copy):
 
-    hydro_files_folder = '/wsu/home/go/go54/go5410/maj-shen/JETSCAPEDataFile/HydroProfiles/5TeV_'+argvs[3]
+    hydro_files_folder = spath.HydroFilePath(argvs[3])
     alphas = argvs[4]
     Qs = argvs[5]
     take_recoil = argvs[6]
@@ -92,13 +93,9 @@ def Submit(argc,argvs,code_path,this_bin,run):
     eCM = int(argvs[1])
     PPAA = argvs[2]
     
-    outdir = os.path.join('/wsu/tmp/AAPaper',gf.GetOutdirname(argc,argvs))
+    outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
     mdir.Mkdirs(outdir)
-    #print(outdir)
-    #outdir = '../Test'
-    master_xml = os.path.join(code_path,'examples/jetscape_init.xml')
-    #master_xml = '../XmlMaster/master.xml'
-    #print(master_xml)
+    master_xml = spath.GetMasterXmlPath()
 
     exec_name = 'PythiaBrickTest'
     if PPAA != 'PP':

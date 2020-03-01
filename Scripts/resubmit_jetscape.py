@@ -1,9 +1,10 @@
-## run_jetscape_master
+## resubmit_jetscape_master
 
 import sys
 import get_pthat_bins as gpt
 import setup as setup
 import set_path as spath
+import check_results as cres
 
 
 def Main(argc,argvs):
@@ -18,7 +19,11 @@ def Main(argc,argvs):
         #if this_bin[0] >= 2:
         run_total = 5
         for run in range(0,run_total):
-            setup.Submit(argc,argvs,code_path,this_bin,run)
+            resub = 0
+            resub = cres.Check(argc,argvs,code_path,this_bin,run)
+            exit()
+            if resub == 1:
+                setup.Submit(argc,argvs,code_path,this_bin,run)
 
 
 
@@ -26,11 +31,11 @@ def CheckArg(argc,argvs):
 
     if argc < 3:
         print('please input options')
-        print('python run_jetscape_master.py [eCM] [PP/AA] [centrality, 0-10, 30-40, 40-50] [alphaS] [Qs] [take_recoil 0 or 1]')
+        print('python run_jetscape_master.py [eCM] [PP/AA] [centrality, 0-10, 30-40, 30-40, 40-50] [alphaS] [Qs] [take_recoil 0 or 1]')
         exit()
     elif argvs[2] != 'PP' and  argc < 7:
         print('please input options')
-        print('python run_jetscape_master.py [eCM] [PP/AA] [centrality, 0-10, 30-40, 40-50] [alphaS] [Qs] [take_recoil 0 or 1]')
+        print('python run_jetscape_master.py [eCM] [PP/AA] [centrality, 0-10, 30-40, 30-40, 40-50] [alphaS] [Qs] [take_recoil 0 or 1]')
         exit()
 
     print( '###############')
