@@ -5,6 +5,8 @@ import get_pthat_bins as gpt
 import setup as setup
 import set_path as spath
 import check_results as cres
+import get_filenames as gf
+import os
 
 
 def Main(argc,argvs):
@@ -19,9 +21,21 @@ def Main(argc,argvs):
         #if this_bin[0] >= 2:
         run_total = 5
         for run in range(0,run_total):
-            resub = 0
-            resub = cres.Check(argc,argvs,code_path,this_bin,run)
-            if resub == 1:
+            outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
+            out_filename = os.path.join(outdir,gf.GetTestOutFilename(this_bin,run))
+            
+            fname = os.path.basename(out_filename)
+            sfname = 'Status'+fname
+
+            status_filename = os.path.join(os.path.dirname(out_filename),sfname)
+            print('Refering Status File: ' + status_filename)
+            
+            if os.path.exists(status_filename):
+                print('Incompleted. To be resubmitted.')
+                build_dir = os.path.join(outdir,gf.GetBuidDirName(this_bin,run))
+                if os.path.isdir(build_dir):
+                    if not mdir.IsEmpty(build_dir):
+                        shutil.rmtree(build_dir)
                 setup.Submit(argc,argvs,code_path,this_bin,run)
 
 
