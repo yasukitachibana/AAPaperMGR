@@ -41,7 +41,7 @@ def Main(argc,argvs):
             print('Submission, Qsub Command')
             print(qsub_command)
             print('-')
-            #os.system(qsub_command)
+            os.system(qsub_command)
 
 def CheckArg(argc,argvs):
 
