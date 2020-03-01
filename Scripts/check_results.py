@@ -34,7 +34,7 @@ def Check(argc,argvs,code_path,this_bin,run):
             lines = [line.strip() for line in lines]
             lines = [line for line in lines if 'Event' in line]
             lines = [line for line in lines if not 'EventPlaneAngle' in line]
-            event_num = int(lines.split()[0])
+            event_num = int(lines[-1].split()[0])
             print(out_filename, ' exists. final event number = ', event_num)
     else:
         print(out_filename, ' does not exist.')
