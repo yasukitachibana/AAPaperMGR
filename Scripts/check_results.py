@@ -7,24 +7,17 @@ import generate_qsub_command as qcom
 import set_path as spath
 import glob as glob
 import shutil
+import sys
 
 
 
-def Check(argc,argvs,code_path,this_bin,run):
+def Main(argc,argvs):
 
-    resub = 0
-    
-    script_dir = os.getcwd()
-    print('run '+str(run))
-    eCM = int(argvs[1])
-    PPAA = argvs[2]
-    
-    outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
-    if not os.path.isdir(outdir):
-        print(outdir, ' does not exist. Exit.')
+    if argc < 2:
         exit()
-        
-    out_filename = os.path.join(outdir,gf.GetTestOutFilename(this_bin,run))
+
+
+    out_filename = argvs[1]
     
     event_num = 0
     
@@ -40,18 +33,30 @@ def Check(argc,argvs,code_path,this_bin,run):
         print(out_filename, ' does not exist.')
     
     if not event_num == (4000-1):
-        resub = 1
-        build_dir = os.path.join(outdir,gf.GetBuidDirName(this_bin,run))
-        if os.path.isdir(build_dir):
-            if not mdir.IsEmpty(build_dir):
-                shutil.rmtree(build_dir)
         print('Incompleted. To be submitted again.')
+   
+        fname = os.path.basename(out_filename)
+        sfname = 'Status'+fname
+
+        status_filename = os.path.join(os.path.dirname(out_filename),sfname)
+        print(status_filename)
+        
+        out_file = open(status_filename,'w')
+        out_file.write('incompleted')
+        out_file.close
+        
+        
+        
+        
     else:
         print('Good. To be Skipped.')
     
-    return resub
 
 
+if __name__ == '__main__':
+    argvs = sys.argv
+    argc = len(argvs)
+    Main(argc,argvs)
 
 
 
