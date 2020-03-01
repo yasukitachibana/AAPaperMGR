@@ -21,7 +21,6 @@ def Main(argc,argvs):
         for run in range(0,run_total):
             resub = 0
             resub = cres.Check(argc,argvs,code_path,this_bin,run)
-            exit()
             if resub == 1:
                 setup.Submit(argc,argvs,code_path,this_bin,run)
 
