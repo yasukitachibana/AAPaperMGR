@@ -24,4 +24,4 @@ def GetBuidDirName(this_bin,run):
     return 'BuildBin'+str(this_bin[0])+'_'+str(this_bin[1])+'_Run'+str(run)
 
 def GetJobName(this_bin,run):
-    return 'Bin'+str(this_bin[0])+'_'+str(this_bin[1])+'_Run'+str(run)
+    return str(this_bin[0])+'_'+str(this_bin[1])+'R'+str(run)

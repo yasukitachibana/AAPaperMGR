@@ -20,8 +20,7 @@ def Main(argc,argvs):
     for this_bin in pthat_bins:
         print('pthat_bin: ', end='')
         print(this_bin, end=' (GeV)\n')
-        #if this_bin[0] >= 2:
-        run_total = 5
+        run_total = 10
         for run in range(0,run_total):
             outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
             out_filename = os.path.join(outdir,gf.GetTestOutFilename(this_bin,run))
