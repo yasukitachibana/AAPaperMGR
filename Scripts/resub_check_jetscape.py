@@ -19,7 +19,7 @@ def Main(argc,argvs):
         print('pthat_bin: ', end='')
         print(this_bin, end=' (GeV)\n')
         #if this_bin[0] >= 2:
-        run_total = 10
+        run_total = 30
         for run in range(0,run_total):
             
             print('run '+str(run))

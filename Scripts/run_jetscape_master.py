@@ -18,7 +18,7 @@ def Main(argc,argvs):
         #if this_bin[0] >= 2:
         #run_total = 10
         #for run in range(0,run_total):
-        for run in range(10,20):
+        for run in range(20,30):
             setup.Submit(argc,argvs,code_path,this_bin,run)
 
 
