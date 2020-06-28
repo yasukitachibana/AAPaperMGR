@@ -38,6 +38,7 @@ def Main(argc,argvs):
                     if not mdir.IsEmpty(build_dir):
                         shutil.rmtree(build_dir)
                 setup.Submit(argc,argvs,code_path,this_bin,run)
+                os.remove(status_filename)
 
 
 
