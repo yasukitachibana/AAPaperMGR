@@ -18,7 +18,8 @@ def Main(argc,argvs):
     for this_bin in pthat_bins:
         print('pthat_bin: ', end='')
         print(this_bin, end=' (GeV)\n')
-        #if this_bin[0] >= 2:
+        #if this_bin[0] < 1600:
+        #    continue
         run_total = 30
         for run in range(0,run_total):
             

@@ -15,10 +15,11 @@ def Main(argc,argvs):
     for this_bin in pthat_bins:
         print('pthat_bin: ', end='')
         print(this_bin, end=' (GeV)\n')
-        #if this_bin[0] >= 2:
+        #if this_bin[0] >= 700:
+        #    continue
         #run_total = 10
         #for run in range(0,run_total):
-        for run in range(20,30):
+        for run in range(10,20):
             setup.Submit(argc,argvs,code_path,this_bin,run)
 
 
