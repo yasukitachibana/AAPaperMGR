@@ -107,7 +107,7 @@ def Submit(argc,argvs,code_path,this_bin,run):
     exec_name = 'PythiaBrickTest'
     if PPAA != 'PP':
         exec_name = 'hydroJetTest'
-        if int(Qs) < 0.0:
+        if float(Qs) < 0.0:
             exec_name = exec_name+'MATTER'
         if argvs[3] == '0-10':
             exec_name = exec_name+'Central'
