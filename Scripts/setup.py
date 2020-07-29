@@ -98,6 +98,7 @@ def Submit(argc,argvs,code_path,this_bin,run):
     print('run '+str(run))
     eCM = int(argvs[1])
     PPAA = argvs[2]
+    Qs = argvs[5]
     
     outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
     mdir.Mkdirs(outdir)
