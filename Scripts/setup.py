@@ -68,7 +68,7 @@ def SetXmlAA(argc, argvs, copy):
     copy = sxml.SetXmlParam( 'hydro_from_file',copy,'hydro_files_folder', hydro_files_folder )
 
 
-    if int(Qs)<0.0:
+    if float(Qs)<0.0:
         copy = sxml.SetXmlParam( 'Matter',copy,'Q0', 1.0 )
         copy = sxml.SetXmlParam( 'Lbt',copy,'Q0', 1.0 )
     else:
