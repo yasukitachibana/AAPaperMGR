@@ -373,6 +373,18 @@ if(${HDF5_FOUND})
   
   add_executable(hydroJetTest  ./examples/hydroJetTest.cc)
   target_link_libraries(hydroJetTest JetScape ${_hdf5_libs})
+  
+  add_executable(hydroJetTest  ../AAPaperMGR/JetscapeCodes/hydroJetTestCentral.cc)
+  target_link_libraries(hydroJetTestCentral JetScape ${_hdf5_libs})
+
+  add_executable(hydroJetTest  ../AAPaperMGR/JetscapeCodes/hydroJetTestPeripheral.cc)
+  target_link_libraries(hydroJetTestPeripheral JetScape ${_hdf5_libs})
+
+  add_executable(hydroJetTest  ../AAPaperMGR/JetscapeCodes/hydroJetTestMATTERCentral.cc)
+  target_link_libraries(hydroJetTestMATTERCentral JetScape ${_hdf5_libs})
+
+  add_executable(hydroJetTest  ../AAPaperMGR/JetscapeCodes/hydroJetTestMATTERPeripheral.cc)
+  target_link_libraries(hydroJetTestMATTERPeripheral JetScape ${_hdf5_libs})
 
   add_executable(hydroJetTestPGun  ./examples/hydroJetTestPGun.cc)
   target_link_libraries(hydroJetTestPGun JetScape ${_hdf5_libs})

@@ -67,14 +67,20 @@ def SetXmlAA(argc, argvs, copy):
     copy = sxml.SetXmlParam( 'IS',copy,'initial_profile_path', hydro_files_folder )
     copy = sxml.SetXmlParam( 'hydro_from_file',copy,'hydro_files_folder', hydro_files_folder )
 
-    copy = sxml.SetXmlParam( 'Matter',copy,'Q0', Qs )
+
+    if int(Qs)<0.0:
+        copy = sxml.SetXmlParam( 'Matter',copy,'Q0', 1.0 )
+        copy = sxml.SetXmlParam( 'Lbt',copy,'Q0', 1.0 )
+    else:
+        copy = sxml.SetXmlParam( 'Matter',copy,'Q0', Qs )
+        copy = sxml.SetXmlParam( 'Lbt',copy,'Q0', Qs )
+
     copy = sxml.SetXmlParam( 'Matter',copy,'T0', T0 )
     copy = sxml.SetXmlParam( 'Matter',copy,'in_vac', 0 )
     copy = sxml.SetXmlParam( 'Matter',copy,'recoil_on', 1 )
     copy = sxml.SetXmlParam( 'Matter',copy,'hydro_Tc', Tc )
     copy = sxml.SetXmlParam( 'Matter',copy,'alphas', alphas )
 
-    copy = sxml.SetXmlParam( 'Lbt',copy,'Q0', Qs )
     copy = sxml.SetXmlParam( 'Lbt',copy,'in_vac', 0 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'only_leading', 0 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'hydro_Tc', 0.16 )
@@ -100,7 +106,13 @@ def Submit(argc,argvs,code_path,this_bin,run):
     exec_name = 'PythiaBrickTest'
     if PPAA != 'PP':
         exec_name = 'hydroJetTest'
-    
+        if int(Qs)<0.0:
+            exec_name = exec_name+'MATTER'
+        if argvs[3] = '0-10':
+            exec_name = exec_name+'Central'
+        else:
+            exec_name = exec_name+'Peripheral'
+            
     xml_filename = os.path.join(outdir,gf.GetXmlFilename(this_bin,run))
     sigma_filename = os.path.join(outdir,gf.GetSigmaFilename(this_bin,run))
     hadron_filename = os.path.join(outdir,gf.GetHadronListFilename(this_bin,run))
