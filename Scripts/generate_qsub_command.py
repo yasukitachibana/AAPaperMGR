@@ -2,7 +2,7 @@ import os
 
 def GenerateQsubCommand(job_name,job_command):
 
-    head = 'sbatch --time=72:00:00 -p mreqp --mem=16G'
+    head = 'sbatch --time=72:00:00 -p mreqp --mem=16G'
     
 
     #head = 'qsub -V -q eamxq -l mem=16gb -l cpu_type=Intel  '
