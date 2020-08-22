@@ -20,8 +20,8 @@ def Main(argc,argvs):
         print(this_bin, end=' (GeV)\n')
         #if this_bin[0] < 1600:
         #    continue
-        run_total = 30
-        for run in range(0,run_total):
+        #run_total = 30
+        for run in range(15,30):
             
             print('run '+str(run))
             eCM = int(argvs[1])
