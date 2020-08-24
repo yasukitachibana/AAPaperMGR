@@ -117,12 +117,13 @@ def Submit(argc,argvs,code_path,this_bin,run):
     xml_filename = os.path.join(outdir,gf.GetXmlFilename(this_bin,run))
     sigma_filename = os.path.join(outdir,gf.GetSigmaFilename(this_bin,run))
     hadron_filename = os.path.join(outdir,gf.GetHadronListFilename(this_bin,run))
+    parton_filename = os.path.join(outdir,gf.GetPartonListFilename(this_bin,run))
     out_filename = os.path.join(outdir,gf.GetTestOutFilename(this_bin,run))
     build_dir = os.path.join(outdir,gf.GetBuidDirName(this_bin,run))
     
     GetXml(argc, argvs, master_xml, xml_filename, this_bin, eCM)
     
-    command = gcom.GetCommand(code_path, build_dir, exec_name, xml_filename, out_filename, sigma_filename, hadron_filename)
+    command = gcom.GetCommand(code_path, build_dir, exec_name, xml_filename, out_filename, sigma_filename, hadron_filename, parton_filename)
     
     mdir.Mkdirs(build_dir)
     
