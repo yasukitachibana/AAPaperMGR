@@ -98,18 +98,20 @@ def Submit(argc,argvs,code_path,this_bin,run):
     print('run '+str(run))
     eCM = int(argvs[1])
     PPAA = argvs[2]
-    Qs = argvs[5]
-    
+
+
     outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
     mdir.Mkdirs(outdir)
     master_xml = spath.GetMasterXmlPath()
 
     exec_name = 'PythiaBrickTest'
     if PPAA != 'PP':
+        centrality = argvs[3]
+        Qs = argvs[5]
         exec_name = 'hydroJetTest'
         if float(Qs) < 0.0:
             exec_name = exec_name+'MATTER'
-        if argvs[3] == '0-10':
+        if centrality == '0-10':
             exec_name = exec_name+'Central'
         else:
             exec_name = exec_name+'Peripheral'
