@@ -14,7 +14,7 @@ def GetSigmaFilename(this_bin,run):
 def GetHadronListFilename(this_bin,run):
     return 'JetscapeHadronListBin'+str(this_bin[0])+'_'+str(this_bin[1])+'_Run'+str(run)+'.out'
 
-def GetHadronListFilename(this_bin,run):
+def GetPartonListFilename(this_bin,run):
     return 'JetscapePartonListBin'+str(this_bin[0])+'_'+str(this_bin[1])+'_Run'+str(run)+'.out'
 
 def GetTestOutFilename(this_bin,run):
