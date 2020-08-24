@@ -19,7 +19,7 @@ def Main(argc,argvs):
         #    continue
         #run_total = 10
         #for run in range(0,run_total):
-        for run in range(20,25):
+        for run in range(0,15):
             setup.Submit(argc,argvs,code_path,this_bin,run)
 
 
