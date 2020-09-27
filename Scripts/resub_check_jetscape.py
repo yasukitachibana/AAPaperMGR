@@ -15,15 +15,15 @@ def Main(argc,argvs):
     eCM = int(argvs[1])
     pthat_bins = gpt.GetPtHatBins( eCM )
 
-    for this_bin in pthat_bins:
-        print('pthat_bin: ', end='')
-        print(this_bin, end=' (GeV)\n')
-        #if this_bin[0] < 1600:
-        #    continue
-        #run_total = 30
-        for run in range(15,30):
-            
-            print('run '+str(run))
+    run_total = 10
+    for run in range(0,run_total):
+
+        for this_bin in pthat_bins:
+            print('pthat_bin: ', end='')
+            print(this_bin, end=' (GeV), run '+str(run))
+            #if this_bin[0] < 1600:
+            #    continue
+
             eCM = int(argvs[1])
             PPAA = argvs[2]
             

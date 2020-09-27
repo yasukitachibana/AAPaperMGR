@@ -2,9 +2,18 @@ import os
 
 def GenerateQsubCommand(job_name,job_command):
 
-    #head = 'sbatch --time=1:00:00 -p $SPRIMARY  --mem=16G'
-    #head = 'sbatch --time=72:00:00 -p $SPRIMARY --mem=64G'
-    head = 'sbatch --time=72:00:00 -p $SPRIMARY --mem=8G'
+    #head = 'sbatch --time=3:00:00 -p $SPRIMARY  --mem=32G'
+    
+    #head = 'sbatch --time=120:00:00 -p $SPRIMARY --mem=64G'
+    #head = 'sbatch --time=72:00:00 -q secondary --mem=32G'
+
+    #head = 'sbatch --time=720:00:00 -q secondary --mem=8G'
+    #head = 'sbatch --time=720:00:00 -q primary --mem=8G'
+    head = 'sbatch --time=24:00:00 -q secondary --mem=32G'
+
+    #head = 'sbatch --time=72:00:00 -p $SPRIMARY --mem=8G'
+    #head = 'sbatch --time=62:00:00 -p $SPRIMARY --mem=8G'
+    #head = 'sbatch --time=72:00:00 -q requeue --mem=16G'
     
 
     #head = 'qsub -V -q eamxq -l mem=16gb -l cpu_type=Intel  '

@@ -62,7 +62,8 @@ def SetXmlAA(argc, argvs, copy):
     Qs = argvs[5]
     take_recoil = argvs[6]
     T0 = 0.16 #Note! This becomes Tc in LBT
-    Tc = 0.15
+    #Tc = 0.15
+    Tc = T0
 
     copy = sxml.SetXmlParam( 'IS',copy,'initial_profile_path', hydro_files_folder )
     copy = sxml.SetXmlParam( 'hydro_from_file',copy,'hydro_files_folder', hydro_files_folder )

@@ -12,14 +12,11 @@ def Main(argc,argvs):
     eCM = int(argvs[1])
     pthat_bins = gpt.GetPtHatBins( eCM )
 
-    for this_bin in pthat_bins:
-        print('pthat_bin: ', end='')
-        print(this_bin, end=' (GeV)\n')
-        #if this_bin[0] <= 9:
-        #    continue
-        #run_total = 10
-        #for run in range(0,run_total):
-        for run in range(0,15):
+    for run in range(0,10):
+        for this_bin in pthat_bins:
+            print('pthat_bin: ', end='')
+            print(this_bin, end=' (GeV), Run-'+str(run)+'\n')
+
             setup.Submit(argc,argvs,code_path,this_bin,run)
 
 

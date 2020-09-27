@@ -17,11 +17,13 @@ def Main(argc,argvs):
     eCM = int(argvs[1])
     pthat_bins = gpt.GetPtHatBins( eCM )
 
-    for this_bin in pthat_bins:
-        print('pthat_bin: ', end='')
-        print(this_bin, end=' (GeV)\n')
-        run_total = 30
-        for run in range(0,run_total):
+    run_total = 30
+    for run in range(0,run_total):
+        for this_bin in pthat_bins:
+            print('pthat_bin: ', end='')
+            print(this_bin, end=' (GeV), run '+str(run))
+
+
             outdir = os.path.join(spath.GetOutputPath(),gf.GetOutdirname(argc,argvs))
             out_filename = os.path.join(outdir,gf.GetTestOutFilename(this_bin,run))
             

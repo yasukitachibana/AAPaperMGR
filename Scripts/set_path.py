@@ -8,7 +8,8 @@ def HydroFilePath(centrality):
     return os.path.join(dir, '5TeV_'+centrality)
 
 def GetOutputPath():
-    return '/wsu/tmp/AAPaper'
+    #return '/wsu/tmp/AAPaper'
+    return '/wsu/tmp/AA_Tc_T0'
 
 def GetMasterXmlPath():
     return os.path.join(GetCodePath(),'examples/jetscape_init.xml')
