@@ -8,6 +8,7 @@ import check_results as cres
 import os
 import get_filenames as gf
 import generate_qsub_command as qcom
+import time
 
 def Main(argc,argvs):
     code_path = spath.GetCodePath()
@@ -43,6 +44,7 @@ def Main(argc,argvs):
             print(qsub_command)
             print('-')
             os.system(qsub_command)
+            time.sleep(0.05)
             #os.system(command)
 
 def CheckArg(argc,argvs):

@@ -14,6 +14,7 @@ def Main(argc,argvs):
 
     for run in range(0,10):
         for this_bin in pthat_bins:
+            this_bin = pthat_bins[30]
             print('pthat_bin: ', end='')
             print(this_bin, end=' (GeV), Run-'+str(run)+'\n')
 

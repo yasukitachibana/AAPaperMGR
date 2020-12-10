@@ -61,9 +61,10 @@ def SetXmlAA(argc, argvs, copy):
     alphas = argvs[4]
     Qs = argvs[5]
     take_recoil = argvs[6]
-    T0 = 0.16 #Note! This becomes Tc in LBT
+    T0 = 0.16001 #Note! This becomes Tc in LBT
     #Tc = 0.15
     Tc = T0
+    print('T0:', T0, ' Tc:', Tc)
 
     copy = sxml.SetXmlParam( 'IS',copy,'initial_profile_path', hydro_files_folder )
     copy = sxml.SetXmlParam( 'hydro_from_file',copy,'hydro_files_folder', hydro_files_folder )
@@ -137,16 +138,16 @@ def Submit(argc,argvs,code_path,this_bin,run):
     
     qsub_command = qcom.GenerateQsubCommand(gf.GetJobName(this_bin,run),master_command)
     
-    #print('Submission, Main Command')
-    #print(master_command)
-    #print('-')
-    #os.system(master_command)
-    #exit()
+    print('Submission, Main Command')
+    print(master_command)
+    print('-')
+    os.system(master_command)
+    exit()
     
     print('Submission, Qsub Command')
     print(qsub_command)
     print('-')
-    os.system(qsub_command)
+    #os.system(qsub_command)
 
 
 

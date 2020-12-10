@@ -9,7 +9,7 @@ import get_filenames as gf
 import os
 import manage_dir as mdir
 import shutil
-
+import time
 
 def Main(argc,argvs):
     code_path = spath.GetCodePath()
@@ -17,9 +17,12 @@ def Main(argc,argvs):
     eCM = int(argvs[1])
     pthat_bins = gpt.GetPtHatBins( eCM )
 
-    run_total = 30
+    run_total = 10
     for run in range(0,run_total):
         for this_bin in pthat_bins:
+
+
+
             print('pthat_bin: ', end='')
             print(this_bin, end=' (GeV), run '+str(run))
 
@@ -34,6 +37,7 @@ def Main(argc,argvs):
             print('Refering Status File: ' + status_filename)
             
             if os.path.exists(status_filename):
+                #time.sleep(0.1)
                 print('Incompleted. To be resubmitted.')
                 build_dir = os.path.join(outdir,gf.GetBuidDirName(this_bin,run))
                 if os.path.isdir(build_dir):
