@@ -61,7 +61,7 @@ def SetXmlAA(argc, argvs, copy):
     alphas = argvs[4]
     Qs = argvs[5]
     take_recoil = argvs[6]
-    T0 = 0.16001 #Note! This becomes Tc in LBT
+    T0 = 0.2 #Note! This becomes Tc in LBT
     #Tc = 0.15
     Tc = T0
     print('T0:', T0, ' Tc:', Tc)
@@ -85,7 +85,7 @@ def SetXmlAA(argc, argvs, copy):
 
     copy = sxml.SetXmlParam( 'Lbt',copy,'in_vac', 0 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'only_leading', 0 )
-    copy = sxml.SetXmlParam( 'Lbt',copy,'hydro_Tc', 0.16 )
+    copy = sxml.SetXmlParam( 'Lbt',copy,'hydro_Tc', T0 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'qhat0', -3.0 )
     copy = sxml.SetXmlParam( 'Lbt',copy,'alphas', alphas )
         
@@ -138,16 +138,16 @@ def Submit(argc,argvs,code_path,this_bin,run):
     
     qsub_command = qcom.GenerateQsubCommand(gf.GetJobName(this_bin,run),master_command)
     
-    print('Submission, Main Command')
-    print(master_command)
-    print('-')
-    os.system(master_command)
-    exit()
+    #print('Submission, Main Command')
+    #print(master_command)
+    #print('-')
+    #os.system(master_command)
+    #exit()
     
-    print('Submission, Qsub Command')
+    print('Submission')
     print(qsub_command)
     print('-')
-    #os.system(qsub_command)
+    os.system(qsub_command)
 
 
 
